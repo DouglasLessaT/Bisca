@@ -12,4 +12,14 @@ public class Jogador {
         this.nome = nome;
         this.cartasMao = new ArrayList<>(3);
     }
+    
+    
+    public void receberCarta(Carta carta) {
+    	for (int i = 0;i<=3;i++) {
+        	this.cartasMao.add(baralho.removerCarta());
+        }
+    }
+    
+    
+    
 }
