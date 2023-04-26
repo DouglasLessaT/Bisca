@@ -8,10 +8,16 @@ public class Jogador {
 	private String nome;
     private List<Carta> cartasMao;
     
+    
     public Jogador(String nome, List<Carta> cartaMao) {
         this.nome = nome;
-        this.cartasMao = new ArrayList<>(3);
+        cartasMao = new ArrayList<>(3);
     }
+    
+    
+    public void setCartasMao(List<Carta> cartasMao) {
+		this.cartasMao = cartasMao;
+	}
     
     
     public void receberCarta(Carta carta) {
@@ -19,7 +25,5 @@ public class Jogador {
         	this.cartasMao.add(baralho.removerCarta());
         }
     }
-    
-    
     
 }
