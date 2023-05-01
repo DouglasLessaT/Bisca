@@ -40,3 +40,16 @@ public void embaralhar() {
         indice = 0;
 
     }
+    
+    public Carta comprarCarta() {
+        if (indice < cartas.size()) {
+            Carta carta = cartas.get(indice);
+            indice++;
+            return carta;
+        } else {
+            return null;
+        }
+    }
+}
+
+    
