@@ -20,12 +20,8 @@ public class Jogador {
 	}
     
     
-    public void receberCarta(Carta carta) {
-    	for (int i = 0;i<=3;i++) {
-        	Object baralho;
-			this.cartasMao.add(baralho.removerCarta());
-        }
-    	
+    public void receberCartas (Carta carta) {
+		cartasMao.add(carta);
     }
     
     public Carta jogarCartas(List<Carta> cartasmesa, String Trunfo) {
