@@ -11,7 +11,7 @@ public class Jogador {
     
     public Jogador(String nome, List<Carta> cartaMao) {
         this.nome = nome;
-        cartasMao = new ArrayList<>(3);
+        cartasMao = new ArrayList<>(2);
     }
     
     
