@@ -32,5 +32,13 @@ public class Jogador {
     	return cartasMao.remove((int)(Math.random()*cartasMao.size()));
     }
     
-    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+		sb.append("Jogador: ").append(nome).append("\n");
+        sb.append("Cartas na mão: \n");
+
+    }
 }
+    
+
