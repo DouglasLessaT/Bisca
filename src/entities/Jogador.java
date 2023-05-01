@@ -37,7 +37,10 @@ public class Jogador {
         StringBuilder sb = new StringBuilder();
 		sb.append("Jogador: ").append(nome).append("\n");
         sb.append("Cartas na mão: \n");
-
+        for (Carta carta : cartasMao) {
+            sb.append(carta.toString()).append("\n");
+        }
+        return sb.toString();
     }
 }
     
