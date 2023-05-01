@@ -22,8 +22,15 @@ public class Jogador {
     
     public void receberCarta(Carta carta) {
     	for (int i = 0;i<=3;i++) {
-        	this.cartasMao.add(baralho.removerCarta());
+        	Object baralho;
+			this.cartasMao.add(baralho.removerCarta());
         }
+    	
     }
+    
+    public Carta jogarCartas(List<Carta> cartasmesa, String Trunfo) {
+    	return cartasMao.remove((int)(Math.random()*cartasMao.size()));
+    }
+    
     
 }
