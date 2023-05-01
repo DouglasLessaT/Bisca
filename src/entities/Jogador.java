@@ -24,8 +24,18 @@ public class Jogador {
 		cartasMao.add(carta);
     }
     
+    
     public Carta jogarCartas(List<Carta> cartasmesa, String Trunfo) {
     	return cartasMao.remove((int)(Math.random()*cartasMao.size()));
+    }
+    
+    
+    public int contarPontos() {
+        int pontos = 0;
+        for (Carta carta : cartasMao) {
+            pontos += carta.getValor();
+        }
+        return pontos;
     }
     
     @Override
@@ -39,5 +49,3 @@ public class Jogador {
         return sb.toString();
     }
 }
-    
-
