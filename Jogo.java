@@ -58,5 +58,14 @@ public class Jogo {
 	                vencedor.receberCarta(cartasVencedor.get(2));
 	            }
 	        }
+	    Jogador vencedor = null;
+	      int pontuacaoMaxima = -1;
+	      for (Jogador jogador : jogadores) {
+	      int pontuacao = 0;
+	       for (Carta carta : jogador.getMao()) {
+	       pontuacao += Carta.PONTUACOES.get(carta.getValor());
+	 }
+	      }
+	    
 	       
 	          
