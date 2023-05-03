@@ -66,6 +66,17 @@ public class Jogo {
 	       pontuacao += Carta.PONTUACOES.get(carta.getValor());
 	 }
 	      }
-	    
+	      if (pontuacao > pontuacaoMaxima) {
+              vencedor = jogador;
+              pontuacaoMaxima = pontuacao;
+          }
+      }
+      if (vencedor == null) {
+          throw new RuntimeException("Não encontrou o vencedor do jogo");
+      }
+
+      System.out.println(vencedor.getNome() + " venceu o jogo com " + pontuacaoMaxima + " pontos!");
+  }
+}
 	       
 	          
