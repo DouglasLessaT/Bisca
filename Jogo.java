@@ -30,6 +30,15 @@ public class Jogo {
 	                    cartasRodada.add(carta);
 	                }
 	            }
-	        }
+	            if (!cartasRodada.isEmpty()) {
+	                cartasRodada.sort(new Comparator<Carta>() {
+	                    public int compare(Carta c1, Carta c2) {
+	                        if (c1.getNaipe() != c2.getNaipe()) {
+	                            return c1.getNaipe().compareTo(c2.getNaipe());
+	                        } else {
+	                            return -Integer.compare(Carta.VALORES.indexOf(c1.getValor()), Carta.VALORES.indexOf(c2.getValor()));
+	                        }
+	                    }
+	                });
 	       
 	          
