@@ -50,6 +50,13 @@ public class Jogo {
 	                if (vencedor == null) {
 	                    throw new RuntimeException("Não encontrou o vencedor da rodada");
 	                }
+	                System.out.println(vencedor.getNome() + " venceu a rodada com " + cartasRodada.get(cartasRodada.size() - 1));
 
+	                List<Carta> cartasVencedor = cartasRodada.subList(0, 3);
+	                vencedor.receberCarta(cartasVencedor.get(0));
+	                vencedor.receberCarta(cartasVencedor.get(1));
+	                vencedor.receberCarta(cartasVencedor.get(2));
+	            }
+	        }
 	       
 	          
