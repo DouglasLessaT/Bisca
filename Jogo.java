@@ -40,5 +40,16 @@ public class Jogo {
 	                        }
 	                    }
 	                });
+	                Jogador vencedor = null;
+	                for (Jogador jogador : jogadores) {
+	                    if (jogador.getMao().contains(cartasRodada.get(cartasRodada.size() - 1))) {
+	                        vencedor = jogador;
+	                        break;
+	                    }
+	                }
+	                if (vencedor == null) {
+	                    throw new RuntimeException("Não encontrou o vencedor da rodada");
+	                }
+
 	       
 	          
