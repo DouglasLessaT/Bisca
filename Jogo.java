@@ -14,6 +14,34 @@ public class Jogo {
 	        
 	        baralho = new Baralho();
 	    }
+	    private int obterValorCarta(Carta carta) {
+	        String valor = carta.getValor();
+	        switch (valor) {
+	            case "4":
+	                return 1;
+	            case "5":
+	                return 2;
+	            case "6":
+	                return 3;
+	            case "7":
+	                return 4;
+	            case "Q":
+	                return 5;
+	            case "J":
+	                return 6;
+	            case "K":
+	                return 7;
+	            case "A":
+	                return 8;
+	            case "2":
+	                return 9;
+	            case "3":
+	                return 10;
+	            default:
+	                return 0;
+	        }
+	    }
+	
 	   
 	    public void jogar() {
 	        baralho.embaralhar();
@@ -77,6 +105,6 @@ public class Jogo {
 
       System.out.println(vencedor.getNome() + " venceu o jogo com " + pontuacaoMaxima + " pontos!");
   }
-}
+}s
 	       
 	          
