@@ -1,7 +1,7 @@
 TRABALHO DE DEVOPS - PROFESSOR JAMES // 2 SEMESTRE, NOTURNO
 CRIAÇÃO DE UM JOGO DE BISCA UTILIZANDO AS FERRAMENTAS E GERENCIADORES DE VERSÃO DE CÓDIGO.
 
-Nome dos integrandes: Michelle da Silva, Gabrielly Gervássio, Victor Turial, Sérgio Romagna e Douglas Toquete. Tecnologias: Java. Instituição: Centro Universiário Católico - Unisales.
+Nome dos integrandes: Michelle da Silva, Gabrielly Gervásio, Victor Turial, Sérgio Romagna e Douglas Toquete. Tecnologias: Java. Instituição: Centro Universiário Católico - Unisales.
 
 SOBRE O JOGO:
 
