@@ -1,55 +1,40 @@
 package entities;
-
-import java.util.Random;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 
 public class Baralho {
-    private ArrayList<Carta> cartas;
-    private int indice;
-    
-    public Baralho() {
-        cartas = new ArrayList<>();
-        String[] valores = {"Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei"};
-        String[] naipes = {"Paus", "Copas", "Espadas", "Ouros"};
-        
-        for (String valor : valores) {
-            for (String naipe : naipes) {
-                Carta carta = new Carta(valor, naipe);
-                cartas.add(carta);
-            }
-        }
-        
-        indice = 0;
-    }
-public void embaralhar() {
+	 private List<Carta> cartas;
 
-        Random random = new Random();
+	    public Baralho() {
+	        cartas = new ArrayList<>();
 
-        for (int i = cartas.size() - 1; i > 0; i--) {
+	        for (Naipe naipe : Naipe.values()) {
+	            for (Valor valor : Valor.values()) {
+	                cartas.add(new Carta(naipe, valor));
+	            }
+	        }
+	    }
 
-            int j = random.nextInt(i + 1);
+	    public void embaralhar() {
+	        Random random = new Random();
 
-            Carta temp = cartas.get(i);
+	        for (int i = cartas.size() - 1; i > 0; i--) {
+	            int j = random.nextInt(i + 1);
+	            Carta temp = cartas.get(i);
+	            cartas.set(i, cartas.get(j));
+	            cartas.set(j, temp);
+	        }
+	    }
 
-            cartas.set(i, cartas.get(j));
+	    public Carta distribuirCarta() {
+	        return cartas.remove(cartas.size() - 1);
+	    }
 
-            cartas.set(j, temp);
+	    public boolean isEmpty() {
+	        return cartas.isEmpty();
+	    }
+	}
 
-        }
 
-        indice = 0;
-
-    }
-    
-    public Carta comprarCarta() {
-        if (indice < cartas.size()) {
-            Carta carta = cartas.get(indice);
-            indice++;
-            return carta;
-        } else {
-            return null;
-        }
-    }
-}
-
-    
