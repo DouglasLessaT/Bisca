@@ -1,110 +1,105 @@
+
+package entities;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
+
 public class Jogo {
+
 	    private List<Jogador> jogadores;
 	    private Baralho baralho;
 
-	    public Jogo(List<String> nomesJogadores) {
+	    public Jogo() {
 	        jogadores = new ArrayList<>();
-	        for (String nome : nomesJogadores) {
-	            jogadores.add(new Jogador(nome));
-	        }
-	        
 	        baralho = new Baralho();
 	    }
-	    private int obterValorCarta(Carta carta) {
-	        String valor = carta.getValor();
-	        switch (valor) {
-	            case "4":
-	                return 1;
-	            case "5":
-	                return 2;
-	            case "6":
-	                return 3;
-	            case "7":
-	                return 4;
-	            case "Q":
-	                return 5;
-	            case "J":
-	                return 6;
-	            case "K":
-	                return 7;
-	            case "A":
-	                return 8;
-	            case "2":
-	                return 9;
-	            case "3":
-	                return 10;
-	            default:
-	                return 0;
+
+	    public void adicionarJogador(Jogador jogador) {
+	        jogadores.add(jogador);
+	    }
+
+	    public void iniciar() {
+	        if (jogadores.size() < 2) {
+	            System.out.println("O jogo precisa ter pelo menos 2 jogadores.");
+	            return;
+	        }
+
+	        baralho.embaralhar();
+	        distribuirCartas();
+
+	        while (!verificarVencedor()) {
+	            for (Jogador jogador : jogadores) {
+	                System.out.println("Mão de " + jogador.getNome() + ":");
+	                exibirMao(jogador);
+	            }
+
+	            jogarRodada();
 	        }
 	    }
-	
-	   
-	    public void jogar() {
-	        baralho.embaralhar();
 
-	        for (Jogador jogador : jogadores) {
-	            jogador.receberCarta(baralho.comprarCarta());
-	        }
+	    private void distribuirCartas() {
+	        int numCartas = 6; // Número de cartas para cada jogador
 
-	        for (int i = 0; i < 4; i++) {
-	            List<Carta> cartasRodada = new ArrayList<>();
+	        for (int i = 0; i < numCartas; i++) {
 	            for (Jogador jogador : jogadores) {
-	                Carta carta = jogador.jogarCarta(i);
-	                if (carta != null) {
-	                    cartasRodada.add(carta);
-	                }
-	            }
-	            if (!cartasRodada.isEmpty()) {
-	                cartasRodada.sort(new Comparator<Carta>() {
-	                    public int compare(Carta c1, Carta c2) {
-	                        if (c1.getNaipe() != c2.getNaipe()) {
-	                            return c1.getNaipe().compareTo(c2.getNaipe());
-	                        } else {
-	                            return -Integer.compare(Carta.VALORES.indexOf(c1.getValor()), Carta.VALORES.indexOf(c2.getValor()));
-	                        }
-	                    }
-	                });
-	                Jogador vencedor = null;
-	                for (Jogador jogador : jogadores) {
-	                    if (jogador.getMao().contains(cartasRodada.get(cartasRodada.size() - 1))) {
-	                        vencedor = jogador;
-	                        break;
-	                    }
-	                }
-	                if (vencedor == null) {
-	                    throw new RuntimeException("N�o encontrou o vencedor da rodada");
-	                }
-	                System.out.println(vencedor.getNome() + " venceu a rodada com " + cartasRodada.get(cartasRodada.size() - 1));
-
-	                List<Carta> cartasVencedor = cartasRodada.subList(0, 3);
-	                vencedor.receberCarta(cartasVencedor.get(0));
-	                vencedor.receberCarta(cartasVencedor.get(1));
-	                vencedor.receberCarta(cartasVencedor.get(2));
+	                Carta carta = baralho.distribuirCarta();
+	                jogador.adicionarCarta(carta);
 	            }
 	        }
-	    Jogador vencedor = null;
-	      int pontuacaoMaxima = -1;
-	      for (Jogador jogador : jogadores) {
-	      int pontuacao = 0;
-	       for (Carta carta : jogador.getMao()) {
-	       pontuacao += Carta.PONTUACOES.get(carta.getValor());
-	 }
-	      }
-	      if (pontuacao > pontuacaoMaxima) {
-              vencedor = jogador;
-              pontuacaoMaxima = pontuacao;
-          }
-      }
-      if (vencedor == null) {
-          throw new RuntimeException("N�o encontrou o vencedor do jogo");
-      }
+	    }
 
-      System.out.println(vencedor.getNome() + " venceu o jogo com " + pontuacaoMaxima + " pontos!");
-  }
-}s
+	    private void exibirMao(Jogador jogador) {
+	        List<Carta> mao = jogador.getMao();
+
+	        for (Carta carta : mao) {
+	            System.out.println(carta);
+	        }
+	    }
+	    
+	    
+	  
+	        public void jogarRodada() {
+	            List<Carta> cartasJogadas = new ArrayList<>();
+
+	            for (Jogador jogador : jogadores) {
+	                Carta carta = jogador.getMao().get(0); // Pega a primeira carta da mão do jogador
+	                cartasJogadas.add(carta);
+	                System.out.println(jogador.getNome() + " jogou " + carta);
+	            }
+
+	            // Lógica para determinar a carta vencedora
+	            Carta cartaVencedora = cartasJogadas.get(0);
+	            Jogador jogadorVencedor = jogadores.get(0);
+
+	            for (int i = 1; i < cartasJogadas.size(); i++) {
+	                Carta carta = cartasJogadas.get(i);
+	                if (carta.getValor().ordinal() > cartaVencedora.getValor().ordinal()) {
+	                    cartaVencedora = carta;
+	                    jogadorVencedor = jogadores.get(i);
+	                }
+	            }
+
+	            System.out.println("A carta vencedora é: " + cartaVencedora);
+	            System.out.println("O jogador vencedor é: " + jogadorVencedor);
+
+	            // Remover a carta vencedora da mão do jogador vencedor
+	            jogadorVencedor.removerCarta(cartaVencedora);
+	        }
+
 	       
-	          
+	            // ...
+
+	            public boolean verificarVencedor() {
+	                for (Jogador jogador : jogadores) {
+	                    if (jogador.getMao().isEmpty()) {
+	                        System.out.println(jogador.getNome() + " venceu o jogo!");
+	                        return true;
+	                    }
+	                }
+	                return false;
+	            }
+
+	            // ...
+	      
+	    }
+
