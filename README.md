@@ -1,6 +1,6 @@
 TRABALHO DE DEVOPS - PROFESSOR JAMES // 2 SEMESTRE, NOTURNO
 CRIAÇÃO DE UM JOGO DE BISCA UTILIZANDO AS FERRAMENTAS E GERENCIADORES DE VERSÃO DE CÓDIGO.
-
+https://github.com/privateclasswizard/Bisca.git
 Nome dos integrandes: Michelle da Silva, Gabrielly Gervásio, Victor Turial, Sérgio Romagna e Douglas Toquete. Tecnologias: Java. Instituição: Centro Universiário Católico - Unisales.
 
 SOBRE O JOGO:
