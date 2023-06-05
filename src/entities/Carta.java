@@ -1,22 +1,35 @@
+package entities;
 
-public class Carta { 
-    private String naipe;
-    private String valor;
-    
-    public Carta(String valor, String naipe) { 
-        this.valor = valor;
+
+enum Naipe {
+    COPAS, OUROS, ESPADAS, PAUS
+}
+
+enum Valor {
+    AS, DOIS, TRES, QUATRO, CINCO, SEIS, SETE, OITO, NOVE, DEZ, VALETE, DAMA, REI
+}
+
+
+   
+public class Carta {
+	private Naipe naipe;
+    private Valor valor;
+
+    public Carta(Naipe naipe, Valor valor) {
         this.naipe = naipe;
+        this.valor = valor;
     }
-    
-    public String getValor() { 
+
+    public Naipe getNaipe() {
+        return naipe;
+    }
+
+    public Valor getValor() {
         return valor;
     }
-    
-    public String getNaipe() {
-        return naipe;
-    } 
-    
+
+    @Override
     public String toString() {
-        return "{" + valor + " de " + naipe +"}";
+        return valor + " de " + naipe;
     }
 }
