@@ -1,5 +1,16 @@
 package entities;
 
+import entities.Baralho;
+import entities.Carta;
+import entities.Naipe;
+import entities.Valor;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class BaralhoFunctionalTest {
 
