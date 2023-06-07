@@ -40,9 +40,9 @@
           <source>1.8</source>
           <target>1.8</target>
                       
-                       <groupId>org.projectlombok</groupId>
-               <artifactId>lombok</artifactId>
-             <version>1.18.22</version>       
+                 
+
+
         </configuration>
       </plugin>
     </plugins>
