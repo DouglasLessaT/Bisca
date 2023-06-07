@@ -27,32 +27,18 @@
         <version>1.3</version>
         <scope>test</scope>
     </dependency>
+           
+           <dependency>
+              <groupId>org.projectlombok</groupId>
+               <artifactId>lombok</artifactId>
+             <version>1.18.22</version>       
+           </dependency>
     </dependencies>
   
   <build>
     <plugins>
           <plugin>
-             <configuration>
-                        <annotationProcessorPaths>
-                            <path>
-                                <groupId>org.projectlombok</groupId>
-                                <artifactId>lombok</artifactId>
-                                <version>1.18.22</version>
-                            </path>
-                        </annotationProcessorPaths>
-                        <compilerArguments>
-                            <verbose />
-                            <Xlint />
-                        </compilerArguments>
-                        <fork>true</fork>
-                        <verbose>true</verbose>
-                        <source>17</source>
-                        <target>17</target>
-                        <showWarnings>true</showWarnings>
-                        <compilerVersion>17</compilerVersion>
-                        <debug>true</debug>
-                  
-     
+             <configuration
                           <groupId>org.apache.maven.plugins</groupId>
                           <artifactId>maven-compiler-plugin</artifactId>
                            <version>3.8.1</version>
