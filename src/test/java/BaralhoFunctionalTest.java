@@ -1,9 +1,6 @@
 package entities;
 
-import entities.Baralho;
-import entities.Carta;
-import entities.Naipe;
-import entities.Valor;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
