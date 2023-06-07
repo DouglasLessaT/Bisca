@@ -1,3 +1,5 @@
+package entities;
+
 import entities.Baralho;
 import entities.Carta;
 import entities.Naipe;
