@@ -34,14 +34,10 @@
     <plugins>
           <plugin>
              <configuration>
-                          <groupId>org.apache.maven.plugins</groupId>
-                          <artifactId>maven-compiler-plugin</artifactId>
-                           <version>3.8.1</version>
-          <source>1.8</source>
-          <target>1.8</target>
-                      
-                 
-
+                         
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>3.8.1</version>
 
         </configuration>
       </plugin>
