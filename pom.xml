@@ -51,12 +51,12 @@
                         <showWarnings>true</showWarnings>
                         <compilerVersion>17</compilerVersion>
                         <debug>true</debug>
-                    </configuration>
+                  
      
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
+                          <groupId>org.apache.maven.plugins</groupId>
+                          <artifactId>maven-compiler-plugin</artifactId>
+                          <version>3.8.1</version>
+                      
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
