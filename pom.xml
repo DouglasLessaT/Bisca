@@ -27,12 +27,7 @@
         <version>1.3</version>
         <scope>test</scope>
     </dependency>
-           
-           <dependency>
-              <groupId>org.projectlombok</groupId>
-               <artifactId>lombok</artifactId>
-             <version>1.18.22</version>       
-           </dependency>
+         
     </dependencies>
   
   <build>
@@ -44,6 +39,10 @@
                            <version>3.8.1</version>
           <source>1.8</source>
           <target>1.8</target>
+                      
+                       <groupId>org.projectlombok</groupId>
+               <artifactId>lombok</artifactId>
+             <version>1.18.22</version>       
         </configuration>
       </plugin>
     </plugins>
