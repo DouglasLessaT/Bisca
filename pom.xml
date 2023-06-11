@@ -39,7 +39,7 @@
   
   
   <build>
-      <sourceDirectory>src/main/java</sourceDirectory>
+      <sourceDirectory>src/main/java/bisca</sourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -50,33 +50,7 @@
           <target>1.8</target> <!-- Versão do Java target -->
         </configuration>
       </plugin>
-          <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.0.2</version>
-        <configuration>
-          <archive>
-            <manifest>
-              <mainClass>org.andgomes.App</mainClass>
-            </manifest>
-          </archive>
-        </configuration>
-      </plugin>  
- <plugin>
-  <groupId>org.codehaus.mojo</groupId>
-  <artifactId>exec-maven-plugin</artifactId>
-  <version>3.0.0</version>
-  <executions>
-    <execution>
-      <goals>
-        <goal>java</goal>
-      </goals>
-    </execution>
-  </executions>
-  <configuration>
-    <mainClass>bisca.App</mainClass>
-  </configuration>
-</plugin>
+         
    </plugins>
   </build>
   
