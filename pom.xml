@@ -74,7 +74,7 @@
     </execution>
   </executions>
   <configuration>
-    <mainClass>projeto.src.main.java.bisca.App</mainClass>
+    <mainClass>bisca.App</mainClass>
   </configuration>
 </plugin>
    </plugins>
