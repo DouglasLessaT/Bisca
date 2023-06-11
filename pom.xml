@@ -14,8 +14,8 @@
   </properties>
 
   <build>
-             <sourceDirectory>src</sourceDirectory>
-        <testSourceDirectory>test</testSourceDirectory>
+       <sourceDirectory>${project.basedir}/src/main/java/bisca</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/java/bisca</testSourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
