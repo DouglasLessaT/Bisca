@@ -39,8 +39,7 @@
   
   
   <build>
-     
-      <sourceDirectory>${project.basedir}/src/main/java/bisca</sourceDirectory>
+      <sourceDirectory>src/main/java/bisca</sourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -49,6 +48,20 @@
         <configuration>
           <source>1.8</source> <!-- Versão do Java source -->
           <target>1.8</target> <!-- Versão do Java target -->
+        </configuration>
+      </plugin>
+
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>bisca.App</mainClass>
+            </manifest>
+          </archive>
         </configuration>
       </plugin>
          
