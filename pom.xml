@@ -39,6 +39,7 @@
   
   
   <build>
+      <sourceDirectory>projeto/src/main/java/bisca</sourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
