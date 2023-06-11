@@ -1,10 +1,10 @@
-package entities;
+package bisca;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
 	        Jogo  jogo  = new Jogo();
 
