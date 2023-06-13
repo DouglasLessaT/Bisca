@@ -23,13 +23,19 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>bisca.App</mainClass>
+              <mainClass>java.App</mainClass>
             </manifest>
           </archive>
         </configuration>
       </plugin>
 
-
+         <plugin>
+      <artifactId>maven-clean-plugin</artifactId>
+      <version>3.2.0</version>
+      <configuration>
+        <failOnError>false</failOnError>
+      </configuration>
+    </plugin>
 
       <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
