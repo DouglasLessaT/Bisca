@@ -1,3 +1,8 @@
+package bisca;
+
+import src.main.bisca.Jogador;
+import src.main.bisca.Jogo;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
