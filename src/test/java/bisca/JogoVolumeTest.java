@@ -12,7 +12,7 @@ public class JogoVolumeTest {
 
     @Test
     public void testJogarRodadaVolume() {
-        // Criação de um grande número de jogadores
+        
         int numeroJogadores = 1000;
         List<Jogador> jogadores = new ArrayList<>();
         for (int i = 1; i <= numeroJogadores; i++) {
@@ -20,7 +20,7 @@ public class JogoVolumeTest {
             jogadores.add(jogador);
         }
 
-        // Adição de um grande número de cartas às mãos dos jogadores
+    
         int numeroCartas = 10000;
         for (Jogador jogador : jogadores) {
             List<Carta> mao = new ArrayList<>();
@@ -30,14 +30,13 @@ public class JogoVolumeTest {
             jogador.setMao(mao);
         }
 
-        // Criação do jogo
+        
         Jogo jogo = new Jogo();
         jogo.adicionarJogadores(jogadores);
 
-        // Execução da rodada
+
         jogo.jogarRodada();
 
-        // Verificação de resultados
-        // (Adicione aqui asserções para verificar os resultados esperados, se aplicável)
+        
     }
 }
