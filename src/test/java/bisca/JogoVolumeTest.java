@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api
+import org.junit.jupiter.api;
 
 import java.util.ArrayList;
 import java.util.List;
