@@ -12,7 +12,7 @@ public class JogoTest {
     
     @Before
     public void setUp() {
-        jogo = null;
+        jogo =  new Jogo("Mario", "Browser", "Pit", "Luigi");
     }
     
     @Test
