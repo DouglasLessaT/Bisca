@@ -30,9 +30,8 @@ public class JogadorTest {
     }
     
     @Test
-    @Tag("integracao")
     public void testComprarCarta() {
-        Baralho baralho = null;
+        Baralho baralho = new Baralho();
         
         jogador.comprarCarta(baralho);
         
