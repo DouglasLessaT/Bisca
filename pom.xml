@@ -16,26 +16,6 @@
 <dependencies>
 
 
-<profile>
-  <id>integration-test</id>
-  <activation>
-    <property>
-      <name>integration-test</name>
-    </property>
-  </activation>
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${surefire-plugin.version}</version>
-        <configuration>
-          <groups>integracao</groups>
-          <excludedGroups>none()</excludedGroups>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</profile>
 
 
 
@@ -105,8 +85,14 @@
            </configuration>
      </plugin>
              
-     
-    
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+            <groups>integraçao</groups>
+        </configuration>
+    </plugin>
      
 
     <plugin>
