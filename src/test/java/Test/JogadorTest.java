@@ -30,7 +30,7 @@ public class JogadorTest {
     }
     
     @Test
-    @Category("integracao")
+    @Tag("integracao")
     public void testComprarCarta() {
         Baralho baralho = null;
         
