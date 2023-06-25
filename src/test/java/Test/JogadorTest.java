@@ -30,7 +30,7 @@ public class JogadorTest {
     }
     
     @Test
-    @Category(SlowTests.class)
+    @Category("integracao")
     public void testComprarCarta() {
         Baralho baralho = null;
         
