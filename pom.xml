@@ -12,7 +12,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-         
+
 <dependencies>
 
 
@@ -29,30 +29,9 @@
     <version>4.13.2</version>
     <scope>test</scope>
 </dependency>
+</dependencies>
 
 
-  <dependency>
-        <groupId>org.hamcrest</groupId>
-        <artifactId>hamcrest-all</artifactId>
-        <version>1.3</version>
-        <scope>test</scope>
-    </dependency>        
-
- <dependency>
-    <groupId>org.junit.vintage</groupId>
-    <artifactId>junit-vintage-engine</artifactId>
-    <version>5.7.2</version>
-    <scope>test</scope>
-</dependency>  
-
-
- <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.7.2</version>
-        <scope>test</scope>
-    </dependency>        
-</dependencies>   
          
   <build>
     <plugins>
@@ -69,19 +48,7 @@
           </archive>
         </configuration>
       </plugin>
-
-             
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.1.2</version>
-        <configuration>
-            <groups>integraçao</groups>
-        </configuration>
-    </plugin>
-     
-
-    <plugin>
+  <plugin>
       <artifactId>maven-clean-plugin</artifactId>
       <version>3.2.0</version>
       <configuration>
@@ -90,7 +57,7 @@
     </plugin>
 
       <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
