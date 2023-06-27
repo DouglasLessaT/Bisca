@@ -12,7 +12,7 @@ public class CartaTest {
     
     @Test
     public void testGetNaipe() {
-        Carta carta = null; //new Carta(Naipe.PAUS, Valor.DOIS);
+        Carta carta = new Carta(Naipe.PAUS, Valor.DOIS);
         assertEquals(Naipe.PAUS, carta.getNaipe());
     }
     
